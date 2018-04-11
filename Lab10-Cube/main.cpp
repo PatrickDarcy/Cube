@@ -14,7 +14,15 @@
 #pragma comment(lib,"sfml-network.lib") 
 #endif 
 
-// don't forget to comment
+// Name: Patrick Darcy
+// Login: C00226157
+// Date: 11/04/2018
+// Approximate time taken: 10 hrs
+//---------------------------------------------------------------------------
+// Project Description: This is a program that rotates and prints the co-ordinates of a cube
+// ---------------------------------------------------------------------------
+// Known Bugs:
+// 
 
 #include "Game.h"
 
