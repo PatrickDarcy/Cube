@@ -1,8 +1,6 @@
 #ifndef GAME
 #define GAME
 
-// don't forget to comment
-
 #include <SFML/Graphics.hpp>
 #include "MyVector3.h"
 #include "MyMatrix3.h"
@@ -37,8 +35,9 @@ private:
 
 
 	sf::RenderWindow m_window; // main rendering window
-	sf::VertexArray m_faces;  // vertex Array used toi draw active faces (not culled)
+	sf::VertexArray m_faces;  // vertex Array used to draw active faces (not culled)
 	sf::VertexArray m_edges; // vertex array used to draw active edges (not culled)
+	sf::Vertex m_cubeVertexs[24];
 
 	sf::CircleShape m_circle; // used to indicate location of cube corners?
 	sf::Text m_letter; // used to print index of cube corner
@@ -50,7 +49,7 @@ private:
 
 	
 
-	int m_cubeVertexs[6][4]; // index of the corners of each of the six faces
+	int m_cubeCorners[6][4]; // index of the corners of each of the six faces
 	bool m_showFace[6];  // bools to remember if a face is not culled
 	
 	double	m_angle; // angle amount used to rotate per key press

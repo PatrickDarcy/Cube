@@ -1,6 +1,6 @@
   /// <summary>
 /// Vector 3 class
-/// your name here or no marks
+/// Patrick Darcy
 /// </summary>
 #include "MyVector3.h"
 #define PI           3.14159265358979323846

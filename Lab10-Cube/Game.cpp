@@ -1,16 +1,14 @@
 #include "Game.h"
 
-// don't forget to comment
-
 Game::Game()
 	: m_window{ sf::VideoMode{ 400, 440 }, "Lab8 Cube" },
 	m_faces{ sf::Quads },
 	m_edges{ sf::Lines },
 	m_circle{ 6.0f },
-	m_letter{},	
+	m_letter{},
 	m_instructions{},
 	m_font{},
-	m_points{ 
+	m_points{
 		{ -111.222, -70.8045, -42.6197 },
 		{ -5.26656, -121.78, 65.8928 },
 		{ 8.62074, -21.7196, -136.579 },
@@ -19,16 +17,34 @@ Game::Game()
 		{ 111.222, 70.8045, 42.6197 },
 		{ -114.576, 72.6952, 28.0669 },
 		{ -8.62074, 21.7196, 136.579 } },
-	m_colours{ YELLOW,BLUE,TAN,PINK,GREEN,RED },
-	m_cubeVertexs{
-		{ 2, 3, 1, 0 },
-		{ 4, 5, 3, 2 },
-		{ 0, 6, 4, 2 },
-		{ 1 ,3 ,5 ,7 },
-		{ 0, 1, 7, 6 },
-		{ 6, 7, 5, 4 }},
-	m_showFace{{false} }, // sets all siz to false
-	m_angle{ PI / 36.0 }  // 5 degrees
+		m_colours{ YELLOW,BLUE,TAN,PINK,GREEN,RED },
+		m_cubeCorners{
+			{ 2, 3, 1, 0 },
+			{ 4, 5, 3, 2 },
+			{ 0, 6, 4, 2 },
+			{ 1 ,3 ,5 ,7 },
+			{ 0, 1, 7, 6 },
+			{ 6, 7, 5, 4 } },
+			m_showFace{ {false} }, // sets all siz to false
+			m_angle{ PI / 36.0 },  // 5 degrees
+			m_cubeVertexs{
+				{m_points[2], sf::Color(RED)},
+				{m_points[3], sf::Color(RED)},
+				{m_points[1], sf::Color(RED)},
+				{m_points[0], sf::Color(RED)},
+				{m_points[4], sf::Color(YELLOW)},
+				{m_points[5], sf::Color(YELLOW)},
+				{m_points[3], sf::Color(YELLOW)},
+				{m_points[2], sf::Color(YELLOW)},
+				{m_points[0], sf::Color(TAN)},
+				{m_points[6], sf::Color(TAN)},
+				{m_points[4], sf::Color(TAN)}, 
+				{m_points[2], sf::Color(TAN)},
+				{m_points[1], sf::Color(BLUE)},
+				{m_points[3], sf::Color(BLUE)},
+				{m_points[5], sf::Color(BLUE)},
+				{m_points[7], sf::Color(BLUE)},
+				
 {
 	setupText();	
 }
@@ -87,7 +103,7 @@ void Game::processEvents()
 		{
 			m_window.close();
 		}
-		if (event.KeyPressed)
+		if (event.type == event.KeyPressed)
 		{
 			processKeyPress(event);
 		}
